@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/authorization_nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.khanhth.welcome.view.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_authenticateFragment"
+            app:destination="@id/authenticateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authenticateFragment"
+        android:name="com.khanhth.welcome.view.authenticate.AuthenticateFragment"
+        android:label="fragment_authenticate"
+        tools:layout="@layout/fragment_authenticate" >
+        <action
+            android:id="@+id/action_authenticateFragment_to_home_nav_graph"
+            app:destination="@id/home_nav_graph" />
+    </fragment>
+    <include app:graph="@navigation/home_nav_graph" />
+</navigation>
